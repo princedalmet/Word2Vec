@@ -13,6 +13,9 @@ From this assumption, Word2Vec can be used to find out the relations between wor
 This tutorial focuses on the right use of the Word2Vec package from the Gensim libray; therefore, I am not going to explain the concepts and ideas behind Word2Vec here.Though the influence of the preprocessing varies with each dataset and application, I thought I would include the data preparation steps in this tutorial and use the great spaCy library along with it.
 
 ## Briefing about Word2Vec:
+
+![15](https://user-images.githubusercontent.com/99526815/160325770-42236d8a-fc6f-43a7-90b7-a0f7c3923697.PNG)
+
 ## Setting up the environment:
 spaCy
 
@@ -30,7 +33,7 @@ raw_character_text: the character who speaks (can be useful when monitoring the 
 spoken_words: the raw text from the line of dialogue
 We do not keep normalized_text because we want to do our own preprocessing.
 
-
+![1](https://user-images.githubusercontent.com/99526815/160326041-ba0b573e-9098-486d-a593-482d27411571.PNG)
 
 The missing values comes from the part of the script where something happens, but with no dialogue. For instance "(Springfield Elementary School: EXT. ELEMENTARY - SCHOOL PLAYGROUND - AFTERNOON)"
 ## Cleaning:
@@ -53,11 +56,15 @@ As Phrases() takes a list of list of words as input:
 
 Creates the relevant phrases from the list of sentences:
 
+![2](https://user-images.githubusercontent.com/99526815/160326180-07d0d693-1564-46a5-8832-056f52b69ac3.PNG)
+
 The goal of Phraser() is to cut down memory consumption of Phrases(), by discarding model state not strictly needed for the bigram detection task:
 
 Transform the corpus based on the bigrams detected:
 
 Most Frequent Words:
+
+![3](https://user-images.githubusercontent.com/99526815/160326234-aaae0a4a-aa3a-4bcd-963f-0a3d137cdab4.PNG)
 
 Mainly a sanity check of the effectiveness of the lemmatization, removal of stopwords, and addition of bigrams.
 
@@ -101,6 +108,8 @@ negative = int - If > 0, negative sampling will be used, the int for negative sp
 
 workers = int - Use these many worker threads to train the model (=faster training with multicore machines)
 
+![4](https://user-images.githubusercontent.com/99526815/160326282-92c74676-bacf-4451-af58-6e3cd3b295df.PNG)
+
 Building the Vocabulary Table:
 
 Word2Vec requires us to build the vocabulary table (simply digesting all the words and filtering out the unique words, and doing some basic counts on them):
@@ -116,4 +125,32 @@ epochs = int - Number of iterations (epochs) over the corpus - [10, 20, 30]
 
 Most similar to:
 Here, we will ask our model to find the word most similar to some of the most iconic characters of the Simpsons!
+
+![5](https://user-images.githubusercontent.com/99526815/160326426-c0be0b0e-4f03-4842-aace-1c1c36838695.PNG)
+
+![6](https://user-images.githubusercontent.com/99526815/160326455-8644533a-e5d9-4f80-ac1a-c51de6c4bcc6.PNG)
+
+![7](https://user-images.githubusercontent.com/99526815/160326481-703dfc0b-822f-43cb-ae85-b3dde0248cbf.PNG)
+
+![8](https://user-images.githubusercontent.com/99526815/160326510-9bd0954a-dba3-4e01-a2c9-5303d71967a3.PNG)
+
+![9](https://user-images.githubusercontent.com/99526815/160326530-df781cd0-8a54-4b34-af14-4d65b98d7bea.PNG)
+
+![10](https://user-images.githubusercontent.com/99526815/160326546-0962bf6d-bc5d-4610-9072-74009ceb225f.PNG)
+
+![11](https://user-images.githubusercontent.com/99526815/160326574-b737340e-6ab0-47de-9a11-d3bdc8984002.PNG)
+
+![12](https://user-images.githubusercontent.com/99526815/160326586-09347eb4-6c22-49b7-ae4f-d7c2246a3acd.PNG)
+
+![13](https://user-images.githubusercontent.com/99526815/160326597-60c20a8e-aa30-457b-a103-d14e9d8541a3.PNG)
+
+![14](https://user-images.githubusercontent.com/99526815/160326611-aff0b431-bb49-42a5-a040-7c30566b764e.PNG)
+
+The end
+
+
+
+
+
+
 
